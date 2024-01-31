@@ -12,28 +12,28 @@ class StringBuilder {
   }
 
   padStart(str) {
-     this.#value = str + this.#value;
+    this.#value = str + this.#value;
     return str;
   }
 
   padEnd(str) {
     this.#value = this.#value + str;
     return str;
-    }
-    
-    padBoth(str) {
-        this.#value = str + this.#value + str;
-        return str;
-    }
-    padScobe1(str) {
-        this.#value = str + this.#value;
-        return str;
-    }
+  }
 
-        padScobe2(str) {
-        this.#value = this.#value + str;
-        return str;
-    }
+  padBoth(str) {
+    this.#value = str + this.#value + str;
+    return str;
+  }
+  padScobeStart(str) {
+    this.#value = str + this.#value;
+    return str;
+  }
+
+  padScobeEnd(str) {
+    this.#value = this.#value + str;
+    return str;
+  }
 }
 
 const builder = new StringBuilder(".");
@@ -48,8 +48,8 @@ console.log(builder.getValue());
 builder.padBoth("=");
 console.log(builder.getValue());
 
-builder.padScobe1("(");
+builder.padScobeStart("(");
 console.log(builder.getValue());
 
-builder.padScobe2(")");
+builder.padScobeEnd(")");
 console.log(builder.getValue());
